@@ -1,6 +1,8 @@
 package maps
 
-import "errors"
+import (
+	"errors"
+)
 
 type Dictionary map[string]string
 
@@ -14,4 +16,8 @@ func (dict Dictionary) Search(word string) (string, error) {
 	}
 
 	return definition, nil
+}
+
+func (dict Dictionary) Add(word, definition string) {
+	dict[word] = definition
 }
